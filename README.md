@@ -54,7 +54,7 @@ This project implements an **end-to-end hospital analytics platform** that inges
 │                                                                      │
 │   CSV FILES          SNOWFLAKE DATA WAREHOUSE                        │
 │   ┌──────────┐       ┌──────────────────────────────────────┐        │
-│   │ patients │  PUT  │  STAGES → SNOWPIPE → RAW TABLES     │        │
+│   │ patients │  PUT  │  STAGES → SNOWPIPE → RAW TABLES      │        │
 │   │ appts    │──────►│       │                              │        │
 │   │ billing  │       │  STREAMS (CDC) ──► TASKS (MERGE)     │        │
 │   └──────────┘       │       │                              │        │
@@ -63,18 +63,18 @@ This project implements an **end-to-end hospital analytics platform** that inges
 │                      │  DYNAMIC TABLES (Auto-Refresh)       │        │
 │                      │       │                              │        │
 │                      │  MART LAYER (STAR Schema)            │        │
-│                      │  ┌─────────┐  ┌──────────────┐      │        │
+│                      │  ┌──────────┐  ┌──────────────┐      │        │
 │                      │  │ DIM x 2  │  │  FACT x 2    │      │        │
-│                      │  │ VIEWS x6 │  │  MAT.VIEWS x2│     │        │
-│                      │  └─────────┘  └──────────────┘      │        │
+│                      │  │ VIEWS x6 │  │  MAT.VIEWS x2│      │        │
+│                      │  └──────────┘  └──────────────┘      │        │
 │                      └──────────────────────────────────────┘        │
 │                              │                                       │
-│                    ┌─────────┴─────────┐                            │
+│                    ┌─────────┴─────────┐                             │
 │                    │                   │                             │
-│               Streamlit App      Power BI                           │
-│               (Python)           (4 Dashboards)                     │
+│               Streamlit App      Power BI                            │
+│               (Python)           (4 Dashboards)                      │
 │                                                                      │
-│   GOVERNANCE: RBAC (3 Roles) + Masking Policies + Secure Views      │
+│   GOVERNANCE: RBAC (3 Roles) + Masking Policies + Secure Views       │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
